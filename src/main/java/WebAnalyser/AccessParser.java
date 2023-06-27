@@ -72,6 +72,30 @@ public class AccessParser {
         return request;
     }
 
+    public String getDevice() {
+        String device = "Other";
+        if (http_user_agent.contains("Android")) {
+            device = "Android";
+        } else if (http_user_agent.contains("iPhone")) {
+            device = "iPhone";
+        } else if (http_user_agent.contains("iPad")) {
+            device = "iPad";
+        } else if (http_user_agent.contains("Windows Phone")) {
+            device = "Windows Phone";
+        } else if (http_user_agent.contains("Windows NT")) {
+            device = "Windows";
+        } else if (http_user_agent.contains("Macintosh")) {
+            device = "Macintosh";
+        } else if (http_user_agent.contains("Linux")) {
+            device = "Linux";
+        } else if (http_user_agent.contains("spider")) {
+            device = "spider";
+        } else if (http_user_agent.contains("compatible")) {
+            device = "compatible";
+        }
+        return device;
+    }
+
     public int getStatus() {
         return status;
     }
